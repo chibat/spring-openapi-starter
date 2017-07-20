@@ -1,4 +1,4 @@
-# spring-openapi-starter
+# Spring Boot + OpenAPI Specification Starter
 
 ## Run
 
