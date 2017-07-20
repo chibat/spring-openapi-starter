@@ -4,9 +4,11 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+		maven {url 'https://plugins.gradle.org/m2/'}
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.4.17')
 	}
 }
 
@@ -27,7 +29,14 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.seasar.doma:doma:2.16.1')
+	compile('io.springfox:springfox-swagger-ui:2.7.0')
+	compileOnly('org.projectlombok:lombok')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
 }
+
+// git information for actuator
+apply plugin: 'com.gorylenko.gradle-git-properties'
+
